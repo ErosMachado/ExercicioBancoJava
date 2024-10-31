@@ -15,30 +15,14 @@ public class ContaCorrente extends Conta {
 	public void setSaldoInvestimentos(double saldoInvestimentos) {
 		this.saldoInvestimentos = saldoInvestimentos;
 	}
-
-	// investir:
-
-	public void investirCorrente(String tipoProduto, double valor) {
-		if (this.sacar(valor)) {
-
-			switch (tipoProduto) {
-			case "CDB": {
-				this.saldoInvestimentos += valor * 1.1;
-				break;
-			}
-			case "LCI": {
-				this.saldoInvestimentos += valor * 1.009;
-				break;
-			}
-			case "LCA": {
-				this.saldoInvestimentos += valor * 1.008;
-				break;
-			}
-			default:
-				throw new IllegalArgumentException("Experado um: " + tipoProduto);
-			}
+	
+	//investir
+	public void investimento(Produto produto, double valor) { //polimorfismo
+		if(this.sacar(valor)) {
+		this.saldoInvestimentos += produto.investir(valor);
 		}
 	}
+
 
 	@Override
 	public void exibirSaldo() {
