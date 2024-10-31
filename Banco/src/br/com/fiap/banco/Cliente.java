@@ -84,4 +84,15 @@ public class Cliente {
 		this.dataNasc = dataNasc;
 	}
 
+	public void investirCorrente(String string, int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void exibirSaldo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 }

@@ -18,27 +18,36 @@ public class ContaCorrente extends Conta {
 
 	// investir:
 
-	
-	
 	public void investirCorrente(String tipoProduto, double valor) {
-		double tx = 0;
-		String tiposProduto = "LCI";
+		if (this.sacar(valor)) {
 
-		if (tiposProduto.equals("CDB")) {
-			tx = 0.01;
-		} else if (tiposProduto.equals("LCI")) {
-			tx = 0.009;
-		} else if (tiposProduto.equals("LCA")) {
-			tx = 0.008;
+			switch (tipoProduto) {
+			case "CDB": {
+				this.saldoInvestimentos += valor * 1.1;
+				break;
+			}
+			case "LCI": {
+				this.saldoInvestimentos += valor * 1.009;
+				break;
+			}
+			case "LCA": {
+				this.saldoInvestimentos += valor * 1.008;
+				break;
+			}
+			default:
+				throw new IllegalArgumentException("Experado um: " + tipoProduto);
+			}
 		}
-
 	}
 
 	@Override
 	public void exibirSaldo() {
+		System.out.println("----------------");
 		System.out.println("Numero do cliente: " + this.numeroConta);
 		System.out.println("Saldo: R$ " + this.saldo);
 		System.out.println("Data de nascimento: " + this.dataNasc);
+		System.out.println("Saldo da conta = " + this.saldo);
+		System.out.println("Saldo investimento = " + this.saldoInvestimentos);
 		System.out.println("Data de abertura conta: " + this.numeroConta);
 		System.out.println("----------------");
 	}
