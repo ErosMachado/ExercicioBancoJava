@@ -1,7 +1,7 @@
 package br.com.fiap.banco;
 
 public class Executavel {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SaldoInsuficiente {
 		/*
 		 * 
 		 * Não se faz instância de superClass!

@@ -87,12 +87,14 @@ public abstract class Conta {
 		this.saldo = saldo;
 	}
 
-	public boolean sacar(double valor) {
+	public boolean sacar(double valor) throws SaldoInsuficiente {
 		if (saldo >= valor) {
 			this.saldo -= valor;
 			return true;
 		}
-		return false;
+		else {
+			throw new SaldoInsuficiente("Saldo Insuficiente");
+		}
 	}
 
 	public void depositar(double valor) {
@@ -100,8 +102,12 @@ public abstract class Conta {
 	}
 
 	public void transferir(Conta contaDestino, double valor) {
-		if (this.sacar(valor)) {
-			contaDestino.depositar(valor);
+		try {
+			if (this.sacar(valor)) {
+				contaDestino.depositar(valor);
+			}
+		} catch (SaldoInsuficiente e) {
+			e.printStackTrace();
 		}
 	}
 

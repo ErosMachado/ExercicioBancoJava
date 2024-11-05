@@ -17,7 +17,7 @@ public class ContaCorrente extends Conta {
 	}
 	
 	//investir
-	public void investimento(Produto produto, double valor) { //polimorfismo
+	public void investimento(Produto produto, double valor) throws SaldoInsuficiente { //polimorfismo
 		if(this.sacar(valor)) {
 		this.saldoInvestimentos += produto.investir(valor);
 		}
