@@ -8,24 +8,6 @@ public class Usuario implements Comparable<Usuario> {
 	private String nome;
 	private String senha;
 	
-	/*
-
-	List<String> lista1 = new Arraylist<String>();
-	lista1.add("Pedro");
-	lista1.add("JoÃ£o");
-	lista1.add("Maria");
-	lista1.add("Marcos");
-	lista1.add("Anna");
-	lista1.add("Jose");
-	lista1.add("Pedro");
-	List<Usuario> list = new ArrayList<Usuario>();
-	Usuario jose = new Usuario("Jose", "123");
-	Usuario maria = new Usuario("Maria", "123");
-	Usuario pedro = new Usuario("Pedro", "123");
-	list.add(jose);
-	list.add(maria);
-	list.add(pedro);
-	*/
 	
 
 	// Construtor
@@ -60,7 +42,7 @@ public class Usuario implements Comparable<Usuario> {
 		this.senha = senha;
 	}
 
-	// Implementaï¿½ï¿½o do mï¿½todo compareTo
+//implementação de comparação 
 	@Override
 	public int compareTo(Usuario user) {
 		if (this.getIdUsuario() < user.getIdUsuario()) {
@@ -74,7 +56,7 @@ public class Usuario implements Comparable<Usuario> {
 
 	
 	
-	// Mï¿½todo para remover usuï¿½rios com nome especï¿½fico da lista
+	// Método para remover usuarios com nome específico
 	public List<Usuario> remover(List<Usuario> list, String nome) {
 		Iterator<Usuario> iterator = list.iterator();
 		while (iterator.hasNext()) {
@@ -85,4 +67,6 @@ public class Usuario implements Comparable<Usuario> {
 		}
 		return list;
 	}
+	
+	
 }
