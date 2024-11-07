@@ -9,7 +9,6 @@ public class Teste {
 	public static void main(String[] args) {
 
 		List<Usuario> lista = new ArrayList<Usuario>();
-
 		lista.add(new Usuario(1, "Pessoa1", "12345"));
 		lista.add(new Usuario(5, "Pessoa2", "12345"));
 		lista.add(new Usuario(3, "Pessoa3", "12345"));
@@ -22,14 +21,12 @@ public class Teste {
 		}
 
 		Collections.sort(lista);
-		
+
 		System.out.println("Lista desordenada");
-		for(Usuario usuario : lista) {
+		for (Usuario usuario : lista) {
 			System.out.println(usuario.getNome());
-			
+
 		}
-		
-		
 
 	}
 
